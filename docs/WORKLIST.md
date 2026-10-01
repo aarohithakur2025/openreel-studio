@@ -57,6 +57,32 @@ Updated: 2026-10-01
 - [ ] Add a no-cost preflight that blocks accidental paid execution when a provider exposes cost/quota metadata.
 - [ ] Add sponsor/donation/support surfaces separately from generation billing; never imply user credits are developer revenue.
 
+## Verified reward / funding routes (checked 2026-10-01)
+
+### GitHub Sponsors — real direct funding route
+- [x] Confirmed India is a supported GitHub Sponsors payout region.
+- [x] Confirmed personal-account sponsorships have no GitHub fee; organization sponsorships can have fees.
+- [x] Added `.github/FUNDING.yml` pointing to `aarohithakur2025`.
+- [ ] User must complete the GitHub Sponsors application, bank/tax details, 2FA and approval; code cannot complete those legal/payment steps.
+- [ ] After approval, add clear Sponsor tiers/rewards based on actual project value.
+
+### NVIDIA Inception — real infrastructure-support route, not automatic cash
+- [x] Confirmed NVIDIA Inception is free to join and can provide developer resources and access to free cloud credits from NVIDIA/partners for eligible members.
+- [x] Confirmed NVIDIA says applicants must meet its current startup criteria; incorporation is currently required.
+- [ ] Apply only if the real eligibility requirements are met.
+- [ ] Never count NVIDIA credits as cash income; treat them as development compute support.
+
+### Open Collective / fiscal hosting — secondary funding route
+- [x] Confirmed Open Collective supports transparent one-time/recurring contributions and fiscal-host structures.
+- [ ] Use only if the project becomes eligible and the administration/fees make sense.
+- [ ] Do not claim funding before an actual contribution is received.
+
+### Programs we should NOT fake as rewards
+- [x] No automatic reward is assumed from GitHub stars, forks, Actions usage or publishing a repository.
+- [x] No “free GPU credit” is counted as revenue.
+- [x] No bug bounty payout is counted unless a specific program explicitly accepts the submission and pays it.
+- [x] No sponsorship income is counted until money is actually received.
+
 ## Pending — ordered execution
 
 ### P0 — Real backend proof
