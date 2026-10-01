@@ -1,0 +1,29 @@
+name: OpenReel validation
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Compile Python
+        run: python -m compileall -q tools
+      - name: Validate repository
+        run: python tools/validate_repo.py
+      - name: Validate mock ComfyUI contract
+        shell: bash
+        run: |
+          python tools/mock_comfy_server.py &
+          PID=$!
+          trap 'kill $PID' EXIT
+          sleep 1
+          python tools/verify_backend.py http://127.0.0.1:8189
