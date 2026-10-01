@@ -47,6 +47,16 @@ Updated: 2026-10-01
 - [x] Optional localhost-only WanGP Python bridge added.
 - [x] WanGP license boundary documented; WanGP is not bundled/copied into OpenReel.
 
+## Architecture decision — user-owned compute / developer-owned tool
+
+- [x] Make BYOC/BYOK the target public architecture: OpenReel provides the control plane; the end user supplies the compute/backend.
+- [x] Keep project-owned GPU/API balances out of the core generation path.
+- [x] Document that user credits are consumed by the connected provider according to that provider's own billing/quota rules.
+- [ ] Add a provider-agnostic backend connection screen with explicit cost/quota disclosure.
+- [ ] Add ComfyUI/WanGP/local backends first; add remote providers only when their authentication, billing and license terms are verified.
+- [ ] Add a no-cost preflight that blocks accidental paid execution when a provider exposes cost/quota metadata.
+- [ ] Add sponsor/donation/support surfaces separately from generation billing; never imply user credits are developer revenue.
+
 ## Pending — ordered execution
 
 ### P0 — Real backend proof
