@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OpenReel Studio</title><link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+<header><strong>OpenReel Studio</strong><span>local-first AI video control</span></header>
+<main>
+<section class="hero"><h1>Idea → verified ComfyUI job</h1><p>Plan a shot, build a production prompt, validate a ComfyUI API workflow, then submit one controlled job.</p></section>
+<section class="card">
+<h2>Project</h2>
+<label>Brief<input id="brief" placeholder="cinematic couple walking at golden hour"></label>
+<div class="row"><label>Format<select id="format"><option>9:16</option><option>16:9</option><option>1:1</option></select></label><label>Duration<select id="duration"><option>5</option><option>10</option><option>15</option><option>20</option></select></label></div>
+<label>Production prompt<textarea id="prompt" rows="5"></textarea></label>
+</section>
+<section class="card">
+<h2>Backend</h2>
+<label>ComfyUI URL<input id="url" value="http://127.0.0.1:8188"></label>
+<div class="row"><button id="check">1. Server Check</button><button id="inspect">2. Inspect Backend</button></div>
+<label>API workflow JSON<input id="workflow" type="file" accept=".json"></label>
+<label>Reference image (optional)<input id="image" type="file" accept="image/*"></label>
+<div class="row"><button id="validate">3. Validation Gate</button><button id="generate">4. Generate One Job</button></div>
+<pre id="status">Ready.</pre>
+</section>
+<section class="card"><h2>Safety</h2><p>One job at a time. Bounded polling. No blind retries. Secrets are never exported.</p></section>
+</main>
+<script src="src/app.js"></script>
+</body></html>
