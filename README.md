@@ -11,6 +11,12 @@ Open-source, local-first control plane for AI video generation with ComfyUI and 
 - **Wan2.2 workflow layer** — accepts an API-format workflow exported from ComfyUI.
 - **CI gate** — syntax, Python compile, JSON validation and security-policy checks on every push/PR.
 
+## User-owned compute model (BYOC/BYOK)
+
+OpenReel is designed as a control plane, not a pooled GPU service. The project should not pay for end-user generation by default. Users bring their own compute/backend: local ComfyUI/WanGP, an eligible cloud/GPU account, or a provider API where its terms and authentication model permit it. OpenReel submits work to the backend selected by the user; it does not silently use a project-owned GPU or API balance.
+
+**Important:** provider billing, quotas, API terms, and model licenses remain the user's responsibility. OpenReel never promises that a provider is free or that a user's credits can be transferred to the developer.
+
 ## Safety / operating model
 
 1. No paid API is required by the core project.
