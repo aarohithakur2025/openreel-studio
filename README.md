@@ -5,6 +5,7 @@ Open-source, local-first control plane for AI video generation with ComfyUI and 
 ## Architecture
 
 - **Web UI** — project/shot planning, prompt building, backend checks, validation, controlled job submission.
+- **Optional WanGP connector** — localhost-only Python bridge to an separately installed WanGP runtime; no WanGP source or model weights are bundled.
 - **Python validation bot** — deterministic repository and ComfyUI API-contract checks; no blind retries.
 - **ComfyUI adapter** — uses the documented `/system_stats`, `/object_info`, `/prompt`, `/history/<prompt_id>` flow.
 - **Wan2.2 workflow layer** — accepts an API-format workflow exported from ComfyUI.
@@ -37,7 +38,7 @@ Expected result ends with `OUTPUT: PASS`.
 
 Wan2.2 TI2V-5B is a chunked video workflow. OpenReel does not claim that one short model sample is a 20-second render. Longer reels should be planned as controlled chunks and stitched with FFmpeg.
 
-See [docs/GENERATION_PLAN.md](docs/GENERATION_PLAN.md) and [docs/SOURCES.md](docs/SOURCES.md).
+See [docs/GENERATION_PLAN.md](docs/GENERATION_PLAN.md), [docs/WANGP_INTEGRATION.md](docs/WANGP_INTEGRATION.md), and [docs/SOURCES.md](docs/SOURCES.md).
 
 ## License
 
