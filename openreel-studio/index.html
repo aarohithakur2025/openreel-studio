@@ -15,15 +15,20 @@
 <label>Production prompt<textarea id="prompt" rows="5"></textarea></label>
 </section>
 <section class="card">
+<h2>Compute ownership</h2>
+<p><strong>User-owned compute:</strong> OpenReel is a control plane. Connect your own local GPU/backend or an account/provider you control. Generation should consume the connected backend's quota/credits, not a pooled OpenReel GPU balance.</p>
+<p class="note">Before running a remote provider, verify its current pricing, quota and license terms. OpenReel does not promise that any provider is free.</p>
+</section>
+<section class="card">
 <h2>Backend</h2>
-<label>ComfyUI URL<input id="url" value="http://127.0.0.1:8188"></label>
+<label>Backend endpoint<input id="url" value="http://127.0.0.1:8188"></label>
 <div class="row"><button id="check">1. Server Check</button><button id="inspect">2. Inspect Backend</button></div>
 <label>API workflow JSON<input id="workflow" type="file" accept=".json"></label>
 <label>Reference image (optional)<input id="image" type="file" accept="image/*"></label>
 <div class="row"><button id="validate">3. Validation Gate</button><button id="generate">4. Generate One Job</button></div>
 <pre id="status">Ready.</pre>
 </section>
-<section class="card"><h2>Safety</h2><p>One job at a time. Bounded polling. No blind retries. Secrets are never exported.</p></section>
+<section class="card"><h2>Safety</h2><p>One job at a time. Bounded polling. No blind retries. Secrets are never exported. No pooled/project-owned GPU is assumed.</p></section>
 </main>
 <script src="src/app.js"></script>
 </body></html>
